@@ -6,7 +6,12 @@ namespace homeWorkOne
     {
         static void Main(string[] args)
         {
+            string userName;
+
             Console.Write("Please enter your name here: ");
+            userName = Console.ReadLine();
+
+            Console.WriteLine("Hello {0}", userName);
         }
     }
 }
