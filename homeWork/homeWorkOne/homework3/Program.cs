@@ -7,16 +7,17 @@ namespace homework3
     {
         static void Main(string[] args)
         {
-
-            try
+            Console.WriteLine("Please enter any int value from 0 to 100: ");
+            var userInput = Console.ReadLine();
+            int fixedInput; //why can't use var ?
+            bool checkParse = Int32.TryParse(userInput, out fixedInput);
+            if (checkParse == true)
             {
-                Console.WriteLine("Please enter any int value from 0 to 100: ");
-                var userInput = Convert.ToInt32(Console.ReadLine());
-                if (userInput >= 0 && userInput <= 100)
+                if (fixedInput >= 0 && fixedInput <= 100)
                 {
-                    Console.WriteLine($"Thank you, your value is {userInput}");
+                    Console.WriteLine($"Thank you, your value is {fixedInput}");
 
-                    switch (userInput)
+                    switch (fixedInput)
                     {
                         case 11:
                         case 22:
@@ -25,12 +26,12 @@ namespace homework3
                             break;
                     }
 
-                    if (userInput % 2 == 0)
+                    if (fixedInput % 2 == 0)
                     {
                         Console.WriteLine("Also this value is even");
                     }
                 }
-                else if (userInput < 0)
+                else if (fixedInput < 0)
                 {
                     Console.WriteLine("Your value is less then 0");
                 }
@@ -39,9 +40,9 @@ namespace homework3
                     Console.WriteLine("Your value is greater then 100");
                 }
             }
-            catch (System.FormatException)
+            else
             {
-                Console.WriteLine("You need to enter int value specifically");
+                Console.WriteLine("Your value is not int");
             }
         }
     }
