@@ -76,7 +76,8 @@ namespace homework4
         }
     }
 }
-*/
+
+//Homework Task #4 implementation 1
 
 {
     class Program
@@ -112,6 +113,45 @@ namespace homework4
         }
     }
 }
+*/
+//Homework Task #4 implementation 2
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("What is the color of banana?\n\ta. Red\n\tb. Green\n\tc. Yellow\n\td. Blue\n\te. Purple");
+
+            string userInput = " ";
+
+            while (userInput != "c")
+            {
+                userInput = Console.ReadLine();
+                if (userInput == "c")
+                {
+                    Console.WriteLine("Correct answer indeed");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Wrong answer. Try again? Y/N");
+                    string x = Console.ReadLine();
+                    if (x == "Y")
+                    {
+                        Console.WriteLine("Ok, enter new answer");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Terminating...");
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 
 
