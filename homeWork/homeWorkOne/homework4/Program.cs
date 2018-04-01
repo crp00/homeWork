@@ -113,7 +113,7 @@ namespace homework4
         }
     }
 }
-*/
+
 //Homework Task #4 implementation 2
 
 {
@@ -152,7 +152,85 @@ namespace homework4
     }
 }
 
+//Homework Task #5
 
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("PLease enter the password: ");
+            string userInput;
+
+            do
+            {
+                userInput = Console.ReadLine();
+                if (userInput == "root")
+                {
+                    Console.WriteLine("Correct Password");
+                }
+                else
+                {
+                    Console.WriteLine("Wrong password, please try again");
+                }
+            }
+            while (userInput != "root");
+        }
+    }
+}
+
+*/
+
+//Homework Task #6 Is there anything ELSE expected here? feels strange
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x;
+
+            for (x = 35; x <= 71; x++)
+            {
+                Console.Write(x + ", ");
+            }
+        }
+    }
+}
+
+//Homework Task #7
+
+/*
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //int i = 5;
+            //i = i++;
+            //Console.WriteLine(i + ++i); //11
+
+            //int i = 2;
+            //i = (++i + ++i) * (i++);
+            //Console.WriteLine(i); //28
+
+            //int i = 10;
+            //i = ++i + (i--) + (i++) + (--i) - (i++);
+            //Console.WriteLine(i); //32
+
+            //int i = 12;
+            //i = (i++ + (--i) - (i++)) / (--i);
+            //Console.WriteLine(i); //1
+
+            //int i = 4;
+            //i = i++ + (--i) - (i--) * (i++);
+            //Console.WriteLine(i); //-4
+        }
+    }
+}
+
+*/
 
 
 
