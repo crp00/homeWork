@@ -190,9 +190,16 @@ namespace homework4
         {
             int x;
 
-            for (x = 35; x <= 71; x++)
+            for (x = 35; x <= 87; x++)
             {
-                Console.Write(x + ", ");
+                if (x == 72)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.Write(x + ", ");
+                }
             }
         }
     }
