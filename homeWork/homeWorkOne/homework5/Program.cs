@@ -31,7 +31,7 @@ namespace homework5
 }
 */
 
-namespace homework5
+namespace homework5 //Task #5
 {
     class Program
     {
@@ -67,15 +67,13 @@ namespace homework5
             { "admin","12345"}
         };
 
-        //static List<string> shoppingCart = new List<string>();
-
         static void Shop()
         {
             List<string> shoppingCart = new List<string>();
 
             while (true)
             {
-                Console.WriteLine("Please choose next action:\na. Purchase products\nb. Print purchased list\nc. Exit store");
+                Console.WriteLine("Please choose action:\na. Purchase products\nb. Print purchased list\nc. Exit store");
                 var storeOption = Console.ReadLine();
                 if (storeOption == "a")
                 {
@@ -149,6 +147,5 @@ namespace homework5
             else
                 Console.WriteLine("User not found");
         }
-
     }
 }
