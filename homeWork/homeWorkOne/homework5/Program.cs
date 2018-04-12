@@ -47,44 +47,108 @@ namespace homework5
                 userInput = Console.ReadLine(); 
                 if (userInput == "a")
                 {
-                    Console.WriteLine("Please enter your login:");
-                    userLogin = Console.ReadLine();
-                    Console.WriteLine("Please enter your password:");
-                    userPassword = Console.ReadLine();
-
-                    if (userList.ContainsKey(userLogin) && userList[userLogin] == userPassword)
-                    {
-                        Console.WriteLine("Authorized");
-                    }
-                    else
-                        Console.WriteLine("User not found");
+                    ValidateExistingUser();
                 }
                 else if (userInput == "b")
                 {
-                    Console.WriteLine("Sign Up GO GO");
+                    AddNewUser();
                 }
                 else if (userInput == "c")
                 {
-                    Console.WriteLine("Exiting...");
+                    Console.WriteLine("Exiting application");
                     break;
                 }
             }
             while (true);
         }
+
         static Dictionary<string, string> userList = new Dictionary<string, string>
         {
             { "admin","12345"}
         };
-        static Dictionary<string, string> itemList = new Dictionary<string, string>
-        {
-            { "1","Apple"},
-            { "2","Lemon"},
-            { "3","Grape"},
-            { "4","Peach"}
-        };
+
+        //static List<string> shoppingCart = new List<string>();
+
         static void Shop()
         {
+            List<string> shoppingCart = new List<string>();
 
+            while (true)
+            {
+                Console.WriteLine("Please choose next action:\na. Purchase products\nb. Print purchased list\nc. Exit store");
+                var storeOption = Console.ReadLine();
+                if (storeOption == "a")
+                {
+                    while (true)
+                    {
+                        Console.WriteLine("please enter product you want to buy or enter EXIT to close");
+                        var selectedproduct = Console.ReadLine();
+                        if (selectedproduct == "EXIT")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            shoppingCart.Add(selectedproduct);
+                        }
+                    }
+                }
+                else if (storeOption == "b")
+                {
+                    if (shoppingCart.Count() > 0)
+                    {
+                        foreach (string product in shoppingCart)
+                        {
+                            Console.WriteLine($"You purchased {product}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Shopping cart is empty");
+                    }
+                }
+                else if (storeOption == "c")
+                {
+                    Console.WriteLine("Exiting store");
+                    break;
+                }
+            }
         }
+
+        static void AddNewUser()
+        {
+            Console.WriteLine("Please enter your login:");
+            var userName = Console.ReadLine();
+            Console.WriteLine("Please enter your password:");
+            var userPass = Console.ReadLine();
+
+            if (userList.ContainsKey(userName))
+            {
+                Console.WriteLine("This login is already occupied");
+            }
+            else
+            {
+                Console.WriteLine("Registered");
+                userList.Add(userName, userPass);
+                Shop();
+            }
+        }
+
+        static void ValidateExistingUser()
+        {
+            Console.WriteLine("Please enter your login:");
+            var userName = Console.ReadLine();
+            Console.WriteLine("Please enter your password:");
+            var userPass = Console.ReadLine();
+
+            if (userList.ContainsKey(userName) && userList[userName] == userPass)
+            {
+                Console.WriteLine("Authorized");
+                Shop();
+            }
+            else
+                Console.WriteLine("User not found");
+        }
+
     }
 }
