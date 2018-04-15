@@ -1,0 +1,14 @@
+Homework for Collection topic   
+1. Write a program to read n number of values in an array and display it  
+2. Write a program to read last n number of values in an array and display it  
+3. Describe main differences between array, list and dictionary 
+4. Get know about some 2 other collections. And write a brief description 
+5. Write a program which represents store. With the following Functionality:   
+	a. Add client --> Add new client  
+	b. LogIn --> LogIn by exist client  
+	c. Buy --> but some stuff  
+	d. Print All -- > Print all stuff which was bought for exist client  
+	e. Exit --> Exit from store  
+	f. Use: List and Dictionary  
+	g. Client represents by string  
+	h. Stuff represent by string  
