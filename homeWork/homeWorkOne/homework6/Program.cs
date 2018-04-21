@@ -58,13 +58,15 @@ namespace homework6
 
             Currency Money1 = new Currency(20, 25);
 
-            Console.WriteLine($"There is {Money1.Dollars} dollars and {Money1.Cents} cents in my pocket");
+            //Console.WriteLine($"There is {Money1.Dollars} dollars and {Money1.Cents} cents in my pocket");
 
             Currency Money2 = new Currency(30.19);
 
-            Console.WriteLine($"Now i have {Money2.Dollars} dollars here and {Money2.Cents} cents");
+            //Console.WriteLine($"Now i have {Money2.Dollars} dollars here and {Money2.Cents} cents");
 
-            Money1.ToDouble();
+            //Money2.ToDouble();
+
+            Money1.Add();
         }
     }
 }

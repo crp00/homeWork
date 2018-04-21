@@ -8,11 +8,17 @@ namespace homework6
 {
     class Currency
     {
+//fields
+
         private int dollars;
         private int cents;
 
+//properties
+
         public int Dollars { get { return dollars; } }
         public int Cents { get { return cents; } }
+
+//constructors
 
         public Currency()
         {
@@ -28,37 +34,20 @@ namespace homework6
 
         public Currency(double a)
         {
-            
             this.dollars = (int)Math.Floor(a);
             this.cents = (int)Math.Floor((a - Math.Floor(a))*100);
         }
 
-        public void ToDouble()
+//metods
+
+        public double ToDouble()
         {
-            Console.WriteLine(Dollars);
-            Console.WriteLine(Cents);
+            string dollars1 = Convert.ToString(Dollars);
+            string cents1 = Convert.ToString(Cents);
+
+            string concatenation = dollars1 + "." + cents1;
+            double result = double.Parse(concatenation, System.Globalization.CultureInfo.InvariantCulture);
+            return result;
         }
-
-        public void Add()
-        {
-
-        }
-
-        public void Multiply(int value)
-        {
-
-        }
-
-        //public override string ToString()
-        //{
-        //    return string.Format("{0}.{1}",dollars,cents);
-        //}
-
-        //public double ToDouble(string str)
-        //{
-        //    double n;
-        //    var d = double.TryParse(str, out n);
-        //    return n;
-        //}
     }
 }
