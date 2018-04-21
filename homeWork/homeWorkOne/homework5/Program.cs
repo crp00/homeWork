@@ -86,32 +86,22 @@ namespace homework5 //Task #5
                             Console.WriteLine("please enter product you want to buy or enter EXIT to close");
                             var selectedproduct = Console.ReadLine();
                             if (selectedproduct == "EXIT")
-                            {
                                 break;
-                            }
                             else
-                            {
                                 shoppingCart.Add(selectedproduct);
-                            }
                         }
                         break;
                     case "b":
                         if (shoppingCart.Count() > 0)
-                        {
                             foreach (string product in shoppingCart)
                             {
                                 Console.WriteLine($"You purchased {product}");
                             }
-                        }
                         else
-                        {
                             Console.WriteLine("Shopping cart is empty");
-                        }
                         break;
                     case "c":
-                        {
                             Console.WriteLine("Exiting store");
-                        }
                         break;
                 }
             }
@@ -127,15 +117,11 @@ namespace homework5 //Task #5
             var userPass = Console.ReadLine();
 
             if (userList.ContainsKey(userName))
-            {
                 Console.WriteLine("This login is already occupied");
-            }
             else
-            {
                 Console.WriteLine("Registered");
                 userList.Add(userName, userPass);
                 BrowseShop();
-            }
         }
 
         static void ValidateExistingUserAndBrowseShop()
