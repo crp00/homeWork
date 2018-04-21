@@ -8,17 +8,21 @@ namespace homework6
 {
     class Currency
     {
-//fields
+        #region Fields
 
         private int dollars;
         private int cents;
 
-//properties
+        #endregion
+
+        #region Properties
 
         public int Dollars { get { return dollars; } }
         public int Cents { get { return cents; } }
 
-//constructors
+        #endregion
+
+        #region Constructors
 
         public Currency()
         {
@@ -38,7 +42,9 @@ namespace homework6
             this.cents = (int)Math.Floor((a - Math.Floor(a))*100);
         }
 
-//metods
+        #endregion
+
+        #region Methods
 
         public double ToDouble()
         {
@@ -49,5 +55,7 @@ namespace homework6
             double result = double.Parse(concatenation, System.Globalization.CultureInfo.InvariantCulture);
             return result;
         }
+
+        #endregion
     }
 }
