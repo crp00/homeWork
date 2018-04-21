@@ -44,22 +44,22 @@ namespace homework5 //Task #5
             do
             {
                 Console.WriteLine("Please choose option to proceed:\na. LOG IN\nb. SIGN UP\nc. EXIT");
-                userInput = Console.ReadLine(); 
-                if (userInput == "a")
+                userInput = Console.ReadLine();
+
+                switch (userInput)
                 {
-                    ValidateExistingUser();
-                }
-                else if (userInput == "b")
-                {
-                    AddNewUser();
-                }
-                else if (userInput == "c")
-                {
-                    Console.WriteLine("Exiting application");
-                    break;
+                    case "a":
+                        ValidateExistingUserAndBrowseShop();
+                        break;
+                    case "b":
+                        RegisterNewUserAndBrowseShop();
+                        break;
+                    case "c":
+                        Console.WriteLine("Exiting application");
+                        break;
                 }
             }
-            while (true);
+            while (userInput != "c");
         }
 
         static Dictionary<string, string> userList = new Dictionary<string, string>
@@ -67,53 +67,59 @@ namespace homework5 //Task #5
             { "admin","12345"}
         };
 
-        static void Shop()
+        static void BrowseShop()
         {
             List<string> shoppingCart = new List<string>();
 
-            while (true)
+            string storeOption;
+
+            do
             {
                 Console.WriteLine("Please choose action:\na. Purchase products\nb. Print purchased list\nc. Exit store");
-                var storeOption = Console.ReadLine();
-                if (storeOption == "a")
+                storeOption = Console.ReadLine();
+
+                switch (storeOption)
                 {
-                    while (true)
-                    {
-                        Console.WriteLine("please enter product you want to buy or enter EXIT to close");
-                        var selectedproduct = Console.ReadLine();
-                        if (selectedproduct == "EXIT")
+                    case "a":
+                        while (true)
                         {
-                            break;
+                            Console.WriteLine("please enter product you want to buy or enter EXIT to close");
+                            var selectedproduct = Console.ReadLine();
+                            if (selectedproduct == "EXIT")
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                shoppingCart.Add(selectedproduct);
+                            }
+                        }
+                        break;
+                    case "b":
+                        if (shoppingCart.Count() > 0)
+                        {
+                            foreach (string product in shoppingCart)
+                            {
+                                Console.WriteLine($"You purchased {product}");
+                            }
                         }
                         else
                         {
-                            shoppingCart.Add(selectedproduct);
+                            Console.WriteLine("Shopping cart is empty");
                         }
-                    }
-                }
-                else if (storeOption == "b")
-                {
-                    if (shoppingCart.Count() > 0)
-                    {
-                        foreach (string product in shoppingCart)
+                        break;
+                    case "c":
                         {
-                            Console.WriteLine($"You purchased {product}");
+                            Console.WriteLine("Exiting store");
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Shopping cart is empty");
-                    }
-                }
-                else if (storeOption == "c")
-                {
-                    Console.WriteLine("Exiting store");
-                    break;
+                        break;
                 }
             }
+            while (storeOption != "c");
+             
         }
 
-        static void AddNewUser()
+        static void RegisterNewUserAndBrowseShop()
         {
             Console.WriteLine("Please enter your login:");
             var userName = Console.ReadLine();
@@ -128,11 +134,11 @@ namespace homework5 //Task #5
             {
                 Console.WriteLine("Registered");
                 userList.Add(userName, userPass);
-                Shop();
+                BrowseShop();
             }
         }
 
-        static void ValidateExistingUser()
+        static void ValidateExistingUserAndBrowseShop()
         {
             Console.WriteLine("Please enter your login:");
             var userName = Console.ReadLine();
@@ -142,7 +148,7 @@ namespace homework5 //Task #5
             if (userList.ContainsKey(userName) && userList[userName] == userPass)
             {
                 Console.WriteLine("Authorized");
-                Shop();
+                BrowseShop();
             }
             else
                 Console.WriteLine("User not found");
