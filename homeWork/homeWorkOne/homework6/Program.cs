@@ -66,7 +66,14 @@ namespace homework6
 
             //Money2.ToDouble();
 
-            Money1.Add();
+            //Money1.Add();
+
+            Citizen Kane = new Citizen("First");
+
+            Kane.name = "Kane";
+            Kane.age = 24;
+
+            Kane.ReturnFields();
         }
     }
 }
