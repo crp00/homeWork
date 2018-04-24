@@ -68,12 +68,32 @@ namespace homework6
 
             //Money1.Add();
 
-            Citizen Kane = new Citizen("First");
+            //Citizen Kane = new Citizen("First");
 
-            Kane.name = "Kane";
-            Kane.age = 24;
+            //Kane.name = "Kane";
+            //Kane.age = 24;
 
-            Kane.ReturnFields();
+            //LegalPerson Fred = new LegalPerson("Second");
+
+            //Bank Barclays = new Bank();
+
+            //Barclays.PutMoneyToAccount(Kane.Id, 200);
+            //Barclays.GetAccountBalance(Kane.Id);
+
+            //Bank DeutcheBank = new Bank();
+
+            //DeutcheBank.GetMoneyFromAccount(Fred.Id, 30);
+            //DeutcheBank.GetAccountBalance(Fred.Id);
+
+            Currency Money3 = new Currency(20, 30);
+
+            Currency Money4 = new Currency(1,1);
+
+            Console.WriteLine(Money3.Dollars);
+            Console.WriteLine(Money3.Cents);
+
+            Console.WriteLine(Money3.Add(Money4));
+
         }
     }
 }

@@ -30,16 +30,16 @@ namespace homework6
             cents = 0;
         }
 
-        public Currency(int x, int y)
+        public Currency(int _dollars, int _cents)
         {
-            this.dollars = x;
-            this.cents = y;
+            this.dollars = _dollars;
+            this.cents = _cents;
         }
 
-        public Currency(double a)
+        public Currency(double _dollarsAndCents)
         {
-            this.dollars = (int)Math.Floor(a);
-            this.cents = (int)Math.Floor((a - Math.Floor(a))*100);
+            this.dollars = (int)Math.Floor(_dollarsAndCents);
+            this.cents = (int)Math.Floor((_dollarsAndCents - Math.Floor(_dollarsAndCents))*100);
         }
 
         #endregion
@@ -48,12 +48,24 @@ namespace homework6
 
         public double ToDouble()
         {
-            string dollars1 = Convert.ToString(Dollars);
-            string cents1 = Convert.ToString(Cents);
-
-            string concatenation = dollars1 + "." + cents1;
+            var concatenation = Dollars.ToString() + "." + Cents.ToString();
             double result = double.Parse(concatenation, System.Globalization.CultureInfo.InvariantCulture);
             return result;
+        }
+
+        public Currency Add(Currency currency)
+        {
+            return new Currency(this.ToDouble() + currency.ToDouble());
+        }
+
+        public Currency Multiply(int multiplier)
+        {
+            return new Currency(this.ToDouble() * multiplier);
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}.{1}", dollars, cents);
         }
 
         #endregion

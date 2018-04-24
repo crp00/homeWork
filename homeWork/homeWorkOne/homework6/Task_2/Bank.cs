@@ -8,7 +8,7 @@ namespace homework6
 {
     class Bank
     {
-        public int bankAccount;
+        public int bankAccount = 0;
 
         public void PutMoneyToAccount(string accountholder, int quantity)
         {
@@ -22,6 +22,7 @@ namespace homework6
 
         public int GetAccountBalance(string accountholder)
         {
+            Console.WriteLine(bankAccount);
             return bankAccount;
         }
     }

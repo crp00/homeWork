@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{16304924-A4D1-4101-8FCF-EECE0C28B4AF}</ProjectGuid>
+    <ProjectGuid>{B0814CAC-2334-4EA2-993D-8E3D0E7AABD0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>homework6</RootNamespace>
-    <AssemblyName>homework6</AssemblyName>
+    <RootNamespace>homework7</RootNamespace>
+    <AssemblyName>homework7</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,19 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task_2\Bank.cs" />
-    <Compile Include="Task_2\Citizen.cs" />
-    <Compile Include="Task_1\Currency.cs" />
-    <Compile Include="Task_2\IHasId.cs" />
-    <Compile Include="Task_2\LegalPerson.cs" />
-    <Compile Include="Task_2\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task_3\ILogger.cs" />
-    <Compile Include="TestClass1.cs" />
+    <Compile Include="Task_1\Author.cs" />
+    <Compile Include="Task_1\Book.cs" />
+    <Compile Include="Task_1\Library.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
