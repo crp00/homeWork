@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace homework6.Task_3
 {
-    interface ILogger
+    public interface ILogger
     {
-        void ConsoleLogger(string log);
-        void FileLogger(string log);
+        void Log(string log);
     }
 }

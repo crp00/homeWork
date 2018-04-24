@@ -8,22 +8,27 @@ namespace homework6
 {
     class Bank
     {
-        public int bankAccount = 0;
+        Dictionary<string,int> customers = new Dictionary<string, int>();
 
         public void PutMoneyToAccount(string accountholder, int quantity)
         {
-            bankAccount = bankAccount + quantity;
+            if (customers.ContainsKey(accountholder))
+                customers[accountholder] += quantity;
+            else
+                customers.Add(accountholder, quantity);
         }
 
         public void GetMoneyFromAccount(string accountholder, int quantity)
         {
-            bankAccount = bankAccount - quantity;
+            if (customers.ContainsKey(accountholder))
+                customers[accountholder] -= quantity;
+            else
+                Console.WriteLine("customer not found");
         }
 
         public int GetAccountBalance(string accountholder)
         {
-            Console.WriteLine(bankAccount);
-            return bankAccount;
+            return customers[accountholder];
         }
     }
 }
