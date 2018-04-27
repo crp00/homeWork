@@ -18,8 +18,8 @@ namespace homework6
         public void ReturnFields()
         {
             Console.WriteLine(Id);
-            Console.WriteLine(name);
-            Console.WriteLine(age);
+            Console.WriteLine(Name);
+            Console.WriteLine(Age);
         }
     }
 }

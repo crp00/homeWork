@@ -52,7 +52,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task_3\ConsoleLogger.cs" />
     <Compile Include="Task_3\ILogger.cs" />
-    <Compile Include="TestClass1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

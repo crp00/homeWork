@@ -8,9 +8,17 @@ namespace homework6
 {
     class Bank
     {
-        Dictionary<string,int> customers = new Dictionary<string, int>();
+        Dictionary<IHasId,int> customers = new Dictionary<IHasId, int>();
 
-        public void PutMoneyToAccount(string accountholder, int quantity)
+        //public void PutMoneyToAccount(string accountholder, int quantity)
+        //{
+        //    if (customers.ContainsKey(accountholder))
+        //        customers[accountholder] += quantity;
+        //    else
+        //        customers.Add(accountholder, quantity);
+        //}
+
+        public void PutMoneyToAccount(IHasId accountholder, int quantity)
         {
             if (customers.ContainsKey(accountholder))
                 customers[accountholder] += quantity;
@@ -18,7 +26,7 @@ namespace homework6
                 customers.Add(accountholder, quantity);
         }
 
-        public void GetMoneyFromAccount(string accountholder, int quantity)
+        public void GetMoneyFromAccount(IHasId accountholder, int quantity)
         {
             if (customers.ContainsKey(accountholder))
                 customers[accountholder] -= quantity;
@@ -26,7 +34,7 @@ namespace homework6
                 Console.WriteLine("customer not found");
         }
 
-        public int GetAccountBalance(string accountholder)
+        public int GetAccountBalance(IHasId accountholder)
         {
             return customers[accountholder];
         }

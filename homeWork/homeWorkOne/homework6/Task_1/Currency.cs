@@ -8,17 +8,10 @@ namespace homework6
 {
     class Currency
     {
-        #region Fields
-
-        private int dollars;
-        private int cents;
-
-        #endregion
-
         #region Properties
 
-        public int Dollars { get { return dollars; } }
-        public int Cents { get { return cents; } }
+        public int Dollars { get; }
+        public int Cents { get; }
 
         #endregion
 
@@ -26,20 +19,26 @@ namespace homework6
 
         public Currency()
         {
-            dollars = 0;
-            cents = 0;
+            Dollars = 0;
+            Cents = 0;
         }
 
-        public Currency(int _dollars, int _cents)
+        public Currency(int dollars, int cents)
         {
-            this.dollars = _dollars;
-            this.cents = _cents;
+            Dollars = dollars;
+            Cents = cents;
         }
 
-        public Currency(double _dollarsAndCents)
+        //public Currency(double _dollarsAndCents)
+        //{
+        //    Dollars = (int)Math.Floor(_dollarsAndCents);
+        //    Cents = (int)Math.Floor((_dollarsAndCents - Math.Floor(_dollarsAndCents))*100);
+        //}
+
+        public Currency(double dollarsAndCents)
         {
-            this.dollars = (int)Math.Floor(_dollarsAndCents);
-            this.cents = (int)Math.Floor((_dollarsAndCents - Math.Floor(_dollarsAndCents))*100);
+            Dollars = (int)dollarsAndCents;
+            Cents = ((int)(dollarsAndCents * 100)) % 100;
         }
 
         #endregion
@@ -48,8 +47,7 @@ namespace homework6
 
         public double ToDouble()
         {
-            var concatenation = Dollars.ToString() + "." + Cents.ToString();
-            double result = double.Parse(concatenation, System.Globalization.CultureInfo.InvariantCulture);
+            double result = Dollars + (((double)Cents) / 100);
             return result;
         }
 
@@ -65,7 +63,7 @@ namespace homework6
 
         public override string ToString()
         {
-            return string.Format("{0}.{1}", dollars, cents);
+            return string.Format("{0}.{1}", Dollars, Cents);
         }
 
         #endregion
