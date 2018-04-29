@@ -11,10 +11,10 @@ namespace homework7.Task_1
         public string Name { get;  private set; }
         public string LastName { get; private set; }
 
-        public Author(string _name, string _lastname)
+        public Author(string name, string lastname)
         {
-            Name = _name;
-            LastName = _lastname;
+            Name = name;
+            LastName = lastname;
         }
 
         public override string ToString()

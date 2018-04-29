@@ -10,12 +10,18 @@ namespace homework7.Task_1
     {
         static void Main(string[] args)
         {
-            Author Person1 = new Author("Chuck", "Palahniuk");
-            Book SomeBook1 = new Book("Survivors","Chapter 1",Person1.ToString());
+            Author someAuthor1 = new Author("James", "Copeland");
+            Author someAuthor2 = new Author("Dan", "Brown");
 
-            //Console.WriteLine($"The book is called {SomeBook1.Name} and it was written by {SomeBook1.Author}, we will start by reading {SomeBook1.Text}");
+            Book someBook1 = new Book("Bubblegum Thief", "aaaaa", someAuthor1);
+            Book someBook2 = new Book("Origin", "bbbb", someAuthor2);
 
-            SomeBook1.
+            Library someLibrary = new Library();
+
+            someLibrary.AddBooksToCollection(someBook1);
+            someLibrary.AddBooksToCollection(someBook2);
+
+            someLibrary.ReviewBookCollection();
         }
     }
 }

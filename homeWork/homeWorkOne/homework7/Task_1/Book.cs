@@ -18,5 +18,10 @@ namespace homework7.Task_1
             Text = _text;
             Author = author.ToString();
         }
+
+        public override string ToString()
+        {
+            return Name + " by " + Author;
+        }
     }
 }
