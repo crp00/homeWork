@@ -70,6 +70,11 @@
     <Compile Include="Task_3\interfaces\ICook.cs" />
     <Compile Include="Task_3\parent_classes\Oven.cs" />
     <Compile Include="Task_3\parent_classes\Stove.cs" />
+    <Compile Include="Task_3_aggregation\ElectricCook.cs" />
+    <Compile Include="Task_3_aggregation\ElectricOvenNew.cs" />
+    <Compile Include="Task_3_aggregation\GasCook.cs" />
+    <Compile Include="Task_3_aggregation\GasOvenNew.cs" />
+    <Compile Include="Task_3_aggregation\StoveNew.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

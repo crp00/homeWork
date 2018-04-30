@@ -54,21 +54,43 @@ using System.Threading.Tasks;
 //    }
 //}
 
-namespace homework7.Task_3
+//namespace homework7.Task_3
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            ElectricCooktop someDevice1 = new ElectricCooktop();
+//            ElectricOven someDevice2 = new ElectricOven();
+//            GasStove someDevice3 = new GasStove();
+
+//            someDevice1.Cook();
+//            someDevice2.Bake();
+
+//            someDevice3.Cook();
+//            someDevice3.Bake();
+//        }
+//    }
+//}
+
+namespace homework7.Task_3_aggregation
 {
     class Program
     {
         static void Main(string[] args)
         {
-            ElectricCooktop someDevice1 = new ElectricCooktop();
-            ElectricOven someDevice2 = new ElectricOven();
-            GasStove someDevice3 = new GasStove();
+            GasCook someCook1 = new GasCook();
+            GasOvenNew someOven1 = new GasOvenNew();
+            ElectricOvenNew someOven2 = new ElectricOvenNew();
 
-            someDevice1.Cook();
-            someDevice2.Bake();
+            StoveNew someStove1 = new StoveNew(someCook1, someOven1);
+            StoveNew someStove2 = new StoveNew(someCook1, someOven2);
 
-            someDevice3.Cook();
-            someDevice3.Bake();
+            someStove1.Bake();
+            someStove1.Cook();
+
+            someStove2.Bake();
+            someStove2.Cook();
         }
     }
 }

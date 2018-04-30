@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace homework7.Task_3_aggregation
 {
-    interface IDisplay
+    class ElectricOvenNew : IBake
     {
-        void Display(); //BuiltInDisplay, ExternalDisplay, Projector
+        public void Bake()
+        {
+            Console.WriteLine("I bake with ELECTRICITY");
+        }
     }
 }
