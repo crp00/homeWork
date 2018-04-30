@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace homework7.Task_3
 {
-    class ArmProcessor : IProcessor
+    interface IBake
     {
-        public void Process()
-        {
-            Console.WriteLine("I am ArmProcessor");
-        }
+        void Bake();
     }
 }

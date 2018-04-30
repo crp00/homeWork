@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace homework7.Task_3
 {
-    class ArmProcessor : IProcessor
+    class Cooktop : ICook
     {
-        public void Process()
+        public void Cook()
         {
-            Console.WriteLine("I am ArmProcessor");
+            Console.WriteLine("I fry french fries");
         }
     }
 }

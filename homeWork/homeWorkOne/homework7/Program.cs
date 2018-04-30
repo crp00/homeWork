@@ -26,30 +26,49 @@ using System.Threading.Tasks;
 //    }
 //}
 
-namespace homework7.Task_2
+//namespace homework7.Task_2
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            BuiltInDisplay someDisplay1 = new BuiltInDisplay();
+//            ExternalDisplay someDisplay2 = new ExternalDisplay();
+//            Projector someDisplay3 = new Projector();
+
+//            Joystick someInput1 = new Joystick();
+//            Keyboard someInput2 = new Keyboard();
+//            Mouse someInput3 = new Mouse();
+
+//            Amd64Processor someProcessor1 = new Amd64Processor();
+//            ArmProcessor someProcessor2 = new ArmProcessor();
+
+//            Computer someComputer1 = new Computer(someProcessor1, someDisplay1, someInput1);
+//            Computer someComputer2 = new Computer(someProcessor2, someDisplay2, someInput2);
+//            Computer someComputer3 = new Computer(someProcessor1, someDisplay3, someInput3);
+
+//            someComputer1.Work();
+//            someComputer2.Work();
+//            someComputer3.Work();
+//        }
+//    }
+//}
+
+namespace homework7.Task_3
 {
     class Program
     {
         static void Main(string[] args)
         {
-            BuiltInDisplay someDisplay1 = new BuiltInDisplay();
-            ExternalDisplay someDisplay2 = new ExternalDisplay();
-            Projector someDisplay3 = new Projector();
+            ElectricCooktop someDevice1 = new ElectricCooktop();
+            ElectricOven someDevice2 = new ElectricOven();
+            GasStove someDevice3 = new GasStove();
 
-            Joystick someInput1 = new Joystick();
-            Keyboard someInput2 = new Keyboard();
-            Mouse someInput3 = new Mouse();
+            someDevice1.Cook();
+            someDevice2.Bake();
 
-            Amd64Processor someProcessor1 = new Amd64Processor();
-            ArmProcessor someProcessor2 = new ArmProcessor();
-
-            Computer someComputer1 = new Computer(someProcessor1, someDisplay1, someInput1);
-            Computer someComputer2 = new Computer(someProcessor2, someDisplay2, someInput2);
-            Computer someComputer3 = new Computer(someProcessor1, someDisplay3, someInput3);
-
-            someComputer1.Work();
-            someComputer2.Work();
-            someComputer3.Work();
+            someDevice3.Cook();
+            someDevice3.Bake();
         }
     }
 }
