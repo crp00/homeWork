@@ -47,6 +47,18 @@
     <Compile Include="Task_1\Author.cs" />
     <Compile Include="Task_1\Book.cs" />
     <Compile Include="Task_1\Library.cs" />
+    <Compile Include="Task_2\Amd64Processor.cs" />
+    <Compile Include="Task_2\ArmProcessor.cs" />
+    <Compile Include="Task_2\BuiltInDisplay.cs" />
+    <Compile Include="Task_2\Computer.cs" />
+    <Compile Include="Task_2\ExternalDisplay.cs" />
+    <Compile Include="Task_2\IDisplay.cs" />
+    <Compile Include="Task_2\IInput.cs" />
+    <Compile Include="Task_2\IProcessor.cs" />
+    <Compile Include="Task_2\Joystick.cs" />
+    <Compile Include="Task_2\Keyboard.cs" />
+    <Compile Include="Task_2\Mouse.cs" />
+    <Compile Include="Task_2\Projector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
