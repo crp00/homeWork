@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace homework7.Task_3_aggregation
+namespace homework7.Task_3
 {
-    class GasCook : ICook
+    class Oven : IBake
     {
-        public void Cook()
+        public void Bake()
         {
-            Console.WriteLine("I do fries with GAS");
+            Console.WriteLine("I bake it all");
         }
     }
 }

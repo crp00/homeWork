@@ -42,13 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task_3\ElectricCooktop.cs" />
-    <Compile Include="Task_3\ElectricOven.cs" />
-    <Compile Include="Task_3\ElectricStove.cs" />
-    <Compile Include="Task_3\GasCooktop.cs" />
-    <Compile Include="Task_3\GasOven.cs" />
-    <Compile Include="Task_3\GasStove.cs" />
-    <Compile Include="Task_3\parent_classes\Cooktop.cs" />
+    <Compile Include="Task_3\Cooktop.cs" />
     <Compile Include="Task_3\interfaces\IBake.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,13 +62,8 @@
     <Compile Include="Task_2\Mouse.cs" />
     <Compile Include="Task_2\Projector.cs" />
     <Compile Include="Task_3\interfaces\ICook.cs" />
-    <Compile Include="Task_3\parent_classes\Oven.cs" />
-    <Compile Include="Task_3\parent_classes\Stove.cs" />
-    <Compile Include="Task_3_aggregation\ElectricCook.cs" />
-    <Compile Include="Task_3_aggregation\ElectricOvenNew.cs" />
-    <Compile Include="Task_3_aggregation\GasCook.cs" />
-    <Compile Include="Task_3_aggregation\GasOvenNew.cs" />
-    <Compile Include="Task_3_aggregation\StoveNew.cs" />
+    <Compile Include="Task_3\Oven.cs" />
+    <Compile Include="Task_3\Stove.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

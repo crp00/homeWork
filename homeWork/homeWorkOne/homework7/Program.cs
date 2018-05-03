@@ -54,43 +54,25 @@ using System.Threading.Tasks;
 //    }
 //}
 
-//namespace homework7.Task_3
-//{
-//    class Program
-//    {
-//        static void Main(string[] args)
-//        {
-//            ElectricCooktop someDevice1 = new ElectricCooktop();
-//            ElectricOven someDevice2 = new ElectricOven();
-//            GasStove someDevice3 = new GasStove();
+namespace homework7.Task_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var ElectricCooktop = new Cooktop();
+            var GasCooktop = new Cooktop();
+            var ElectricOven = new Oven();
+            var GasOven = new Oven();
 
-//            someDevice1.Cook();
-//            someDevice2.Bake();
+            var ElectricStove = new Stove(ElectricCooktop,ElectricOven);
+            var GasStove = new Stove(GasCooktop,GasOven);
 
-//            someDevice3.Cook();
-//            someDevice3.Bake();
-//        }
-//    }
-//}
+            ElectricCooktop.Cook();
+            GasOven.Bake();
 
-//namespace homework7.Task_3_aggregation
-//{
-//    class Program
-//    {
-//        static void Main(string[] args)
-//        {
-//            GasCook someCook1 = new GasCook();
-//            GasOvenNew someOven1 = new GasOvenNew();
-//            ElectricOvenNew someOven2 = new ElectricOvenNew();
-
-//            StoveNew someStove1 = new StoveNew(someCook1, someOven1);
-//            StoveNew someStove2 = new StoveNew(someCook1, someOven2);
-
-//            someStove1.Bake();
-//            someStove1.Cook();
-
-//            someStove2.Bake();
-//            someStove2.Cook();
-//        }
-//    }
-//}
+            GasStove.Bake();
+            GasStove.Cook();
+        }
+    }
+}
