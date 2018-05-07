@@ -48,5 +48,29 @@ namespace homework8Tests
 
             Assert.That(someDepartment1.GetAll(),Is.Empty);
         }
+
+        [Test]
+        [Category("Department")]
+        public void Sort_MultipleEmpolyees_AreOrderedInList()
+        {
+            var someDepartment = new Department();
+            var employee1 = new Programmer("Frank", "Garson", 25);
+            var employee2 = new Programmer("Jade", "Garson", 35);
+            var employee3 = new Programmer("Hamilton", "Garson", 45);
+
+            someDepartment.Add(employee1);
+            someDepartment.Add(employee2);
+            someDepartment.Add(employee3);
+            someDepartment.Sort();
+
+            Assert.That(someDepartment.GetAll(),Is.Ordered);
+        }
+
+        [Test]
+        [Category("Department")]
+        public void Add_NewEmptyEmployee_ThrowsNullReferenceException()
+        {
+
+        }
     }
 }
