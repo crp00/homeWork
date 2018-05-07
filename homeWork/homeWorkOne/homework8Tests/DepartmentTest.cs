@@ -8,8 +8,17 @@ namespace homework8Tests
 {
     using NUnit.Framework;
     using System;
+    using homework8;
 
-    class DepartmentTest_1
+    [TestFixture]
+
+    class DepartmentTest
     {
+        [Test]
+        [Category("Department")]
+        public void AddEmployeeToListWrite()
+        {
+
+        }
     }
 }
