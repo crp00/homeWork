@@ -1,0 +1,17 @@
+Task1.
+Create unit tests for Department class in Hometask Project (See attached solution NUnitLectureExapmles)
+Use proper Naming for project, class and methods.
+
+Task2.
+Practice writing Assert expressions. Think of 15 examples of Assert expressions. Use different Assert methods and constraints.
+Write each example in both classic Assert model and Constraint-based model.
+
+Example:
+
+1.Check collection is not empty:
+public void AssertCollection_NotEmpty()
+{
+int[] collection1 = new int[] { 1, 2, 3 };
+Assert.That(collection1, Is.Not.Empty);
+CollectionAssert.IsNotEmpty(collection1);
+}
