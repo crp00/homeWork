@@ -70,7 +70,9 @@ namespace homework8Tests
         [Category("Department")]
         public void Add_NewEmptyEmployee_ThrowsNullReferenceException()
         {
-            //to add something here
+            var someDepartment = new Department();
+
+            Assert.Throws<NullReferenceException>(() => someDepartment.Add(null));
         }
     }
 }
