@@ -8,5 +8,9 @@ namespace homework9_git
 {
     class HelperClass
     {
+        public void GetHelp()
+        {
+            //empty
+        }
     }
 }
