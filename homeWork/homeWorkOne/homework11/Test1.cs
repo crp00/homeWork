@@ -24,16 +24,15 @@ namespace homework11
             searchElement.Submit();
 
             var resultSet = new List<IWebElement>();
-            var resultFormatted = new List<string>();
 
             resultSet = driver.FindElements(By.XPath("//div[@class='title - itm']/h5")).ToList();
 
-            foreach (IWebElement x in resultSet)
-            {
-                resultFormatted.Add(x.ToString());
-            }
+            //foreach (IWebElement x in resultSet)
+            //{
+            //    resultFormatted.Add(x.ToString());
+            //}
 
-            Assert.That(resultFormatted.Contains("macbook"));
+            //Assert.That(resultFormatted.Contains("macbook"));
 
             //driver.Quit();
 
