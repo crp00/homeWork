@@ -24,19 +24,18 @@ namespace homework11
             searchElement.Submit();
 
             var resultSet = new List<IWebElement>();
+            var titleNames = new List<string>();
 
-            resultSet = driver.FindElements(By.XPath("//div[@class='title - itm']/h5")).ToList();
+            System.Threading.Thread.Sleep(5000);
 
-            //foreach (IWebElement x in resultSet)
-            //{
-            //    resultFormatted.Add(x.ToString());
-            //}
+            resultSet = driver.FindElements(By.XPath("//div[@class='title-itm']/h5")).ToList();
 
-            //Assert.That(resultFormatted.Contains("macbook"));
+            //var resultSet = driver.FindElements(By.XPath("//div[@class='title-itm']/h5")).ToString().ToList();
 
-            //driver.Quit();
+            //Assert.That(resultSet.Contains(searchKey));
 
-            //titles = driver.FindElements(By.XPath("//div[@class='title - itm']/h5")).ToList();
+            driver.Quit();
+
 
 
 
