@@ -18,13 +18,28 @@ namespace homework11
             IWebDriver driver = new ChromeDriver();
             driver.Url = "https://www.citrus.ua/";
 
+            var searchKey = "macbook";
             var searchElement = driver.FindElement(By.XPath("//input[@type='search' and @id='multisearch']"));
-            searchElement.SendKeys("macbook");
+            searchElement.SendKeys(searchKey);
             searchElement.Submit();
 
-            Assert.That(driver.Url.Contains("macbook"));
+            var resultSet = new List<IWebElement>();
+            var resultFormatted = new List<string>();
 
-            driver.Close();
+            resultSet = driver.FindElements(By.XPath("//div[@class='title - itm']/h5")).ToList();
+
+            foreach (IWebElement x in resultSet)
+            {
+                resultFormatted.Add(x.ToString());
+            }
+
+            Assert.That(resultFormatted.Contains("macbook"));
+
+            //driver.Quit();
+
+            //titles = driver.FindElements(By.XPath("//div[@class='title - itm']/h5")).ToList();
+
+
 
 
 
