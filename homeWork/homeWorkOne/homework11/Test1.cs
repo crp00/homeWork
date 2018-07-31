@@ -98,5 +98,34 @@ namespace homework11
 
             driver.Quit();
         }
+
+        [TestCase]
+        public void FILTER_validateOrderOfTheFilterOnTVPage()
+        {
+            IWebDriver driver = new ChromeDriver();
+            driver.Url = "https://www.citrus.ua/";
+
+            var expectedFilters = new List<string> { "Цена", "Акции и скидки", "Бренд", "Диагональ", "Разрешение", "Тип телевизора", "Smart TV", "Поддержка 3D", "Изогнутый экран", "Суммарная мощность динамиков", "Операционная система" };
+
+            var firstElement = driver.FindElement(By.XPath("//a[@title='TV']"));
+
+            firstElement.Click();
+
+            System.Threading.Thread.Sleep(5000);
+
+            List<IWebElement> FilterElements = new List<IWebElement>();
+            List<string> filters = new List<string>();
+
+            FilterElements = driver.FindElements(By.XPath("//div[@class='filter-itm']/h3")).ToList();
+
+            foreach (IWebElement x in FilterElements)
+            {
+                filters.Add(x.Text);
+            }
+
+            Assert.That(filters.SequenceEqual(expectedFilters));
+
+            driver.Quit();
+        }
     }
 }
