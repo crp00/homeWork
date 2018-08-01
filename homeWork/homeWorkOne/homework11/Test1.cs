@@ -12,7 +12,7 @@ namespace homework11
     [TestFixture]
     public class Test1
     {
-        [TestCase]
+        [Test]
         public void MackBook_FromHomePageSearchMackbookAndValidateResults()
         {
             IWebDriver driver = new ChromeDriver();
