@@ -11,8 +11,12 @@ namespace homework11
     [TestFixture]
     class Test2
     {
-        //IWebDriver driver = new ChromeDriver();
         public IWebDriver driver;
+
+        public void WaiterByXpath(IWebDriver somedriver, int seconds, string xpath)
+        {
+            new WebDriverWait(somedriver, TimeSpan.FromSeconds(seconds)).Until(ExpectedConditions.ElementExists((By.XPath(xpath))));
+        }
 
         [SetUp]
         public void Setup()
@@ -39,8 +43,7 @@ namespace homework11
             searchElement.SendKeys(searchKey);
             searchElement.Submit();
 
-            //System.Threading.Thread.Sleep(5000);
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists((By.XPath(sample))));
+            WaiterByXpath(driver,10,sample);
 
             var resultSet = driver.FindElements(By.XPath(sample)).ToList();
 
@@ -53,13 +56,13 @@ namespace homework11
         [Category("refactored")]
         public void GoToTvCategory_ApplyFilter_ValidateFilterIsApplied()
         {
-            var crazyXpath = "//*[@id='__layout']/div/main/div/div[2]/aside/div/div[3]/ul/li[4]/label/span[1]";
+            var checkbox = "//div[@class='filter-itm'][3]//li[4]//span[@class='el-checkbox__input']";
 
             driver.FindElement(By.XPath("//a[@title='TV']")).Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists((By.XPath(crazyXpath))));
+            WaiterByXpath(driver, 10, checkbox);
 
-            driver.FindElement(By.XPath(crazyXpath)).Click();
+            driver.FindElement(By.XPath(checkbox)).Click();
 
             var filterObject = driver.FindElement(By.XPath("//span[@title='Бренд']"));
             var filterName = filterObject.Text;
@@ -71,16 +74,16 @@ namespace homework11
         [Category("refactored")]
         public void SaveNameAndPriceForFirstProduct_OpenPDP_ValidatePriceAndNameMatch()
         {
-            var xpathGridPrice = "//*[@id='__layout']/div/main/div/div[2]/section/div[2]/div/div[1]/div/div/div[1]/div[4]/span[2]/span[1]";
-            var xpathGridName = "//*[@id='__layout']/div/main/div/div[2]/section/div[2]/div/div[1]/div/div/div[1]/a/div/h5";
-            var xpathPDPprice = "//*[@id='__layout']/div/main/div[2]/div[2]/section/div/div[2]/div/div[2]/div[1]/div[1]/a/span[1]/span[1]";
-            var xpathPDPname = "//*[@id='__layout']/div/main/div[2]/h1";
+            var xpathGridPrice = "//div[@data-idd='623741']//span[@class='base-price']/span";
+            var xpathGridName = "//div[@data-idd='623741']//h5";
+            var xpathPDPprice = "//a[@class='buy-general']//span[@class='price-number']";
+            var xpathPDPname = "//h1[@class='cart-main-title']";
 
-            var xpathOpenPDP = "//*[@id='__layout']/div/main/div/div[2]/section/div[2]/div/div[1]/div/div/div[1]/a";
+            var xpathOpenPDP = "//div[@data-idd='623741']/div/div/a";
 
             driver.FindElement(By.XPath("//a[@title='TV']")).Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists((By.XPath(xpathGridPrice))));
+            WaiterByXpath(driver, 10, xpathGridPrice);
 
             var gridPriceElement = driver.FindElement(By.XPath(xpathGridPrice));
             var gridNameElement = driver.FindElement(By.XPath(xpathGridName));
@@ -89,7 +92,7 @@ namespace homework11
 
             driver.FindElement(By.XPath(xpathOpenPDP)).Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists((By.XPath(xpathPDPprice))));
+            WaiterByXpath(driver, 10, xpathPDPprice);
 
             var pdpPriceElement = driver.FindElement(By.XPath(xpathPDPprice));
             var pdpNameElement = driver.FindElement(By.XPath(xpathPDPname));
@@ -108,7 +111,8 @@ namespace homework11
 
             driver.FindElement(By.XPath("//a[@title='TV']")).Click();
 
-            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists((By.XPath(xpathFacetFilters))));
+            //new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists((By.XPath(xpathFacetFilters))));
+            WaiterByXpath(driver, 10, xpathFacetFilters);
 
             var filterElements = driver.FindElements(By.XPath(xpathFacetFilters)).ToList();
             var filterValues = filterElements.Select(x => x.Text).ToList();
