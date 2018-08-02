@@ -11,12 +11,13 @@ namespace homework11
     [TestFixture]
     class Test2
     {
-        IWebDriver driver = new ChromeDriver();
-        
+        //IWebDriver driver = new ChromeDriver();
+        public IWebDriver driver;
 
         [SetUp]
         public void Setup()
         {
+            driver = new ChromeDriver();
             driver.Url = "https://www.citrus.ua/";
             driver.Manage().Window.Maximize();
         }
