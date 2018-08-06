@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.UI;
 namespace homework11
 {
     [TestFixture]
-    class Test2
+    class Test2//div[@class='roww catalog-roww']//a/div/h5
     {
         public IWebDriver driver;
 
@@ -37,9 +37,9 @@ namespace homework11
         public void SearchForMacbook_ValidateProductTitles()
         {
             var searchKey = "MacBook";
-            var sample = "//div[@class='roww catalog-roww']//a/div/h5";
+            var sample = "//div[@class='roww catalog-roww']//div[@class='title-itm']";
 
-            var searchElement = driver.FindElement(By.XPath("//input[@type='search' and @id='multisearch']"));
+            var searchElement = driver.FindElement(By.XPath("//input[@id='multisearch']"));
             searchElement.SendKeys(searchKey);
             searchElement.Submit();
 
@@ -56,7 +56,7 @@ namespace homework11
         [Category("refactored")]
         public void GoToTvCategory_ApplyFilter_ValidateFilterIsApplied()
         {
-            var checkbox = "//div[@class='filter-itm'][3]//li[4]//span[@class='el-checkbox__input']";
+            var checkbox = "//li[@class='flt-check']//span[contains(text(),'LG')]";
 
             driver.FindElement(By.XPath("//a[@title='TV']")).Click();
 
@@ -74,25 +74,24 @@ namespace homework11
         [Category("refactored")]
         public void SaveNameAndPriceForFirstProduct_OpenPDP_ValidatePriceAndNameMatch()
         {
-            var xpathGridPrice = "//div[@data-idd='623741']//span[@class='base-price']/span";
-            var xpathGridName = "//div[@data-idd='623741']//h5";
+            var xpathGridPrice = "//span[@class='base-price']/span[@class='price-number']";
+            var xpathGridName = "//div[@class='title-itm']/h5";
             var xpathPDPprice = "//a[@class='buy-general']//span[@class='price-number']";
             var xpathPDPname = "//h1[@class='cart-main-title']";
 
-            var xpathOpenPDP = "//div[@data-idd='623741']/div/div/a";
-
             driver.FindElement(By.XPath("//a[@title='TV']")).Click();
 
-            WaiterByXpath(driver, 10, xpathGridPrice);
+            WaiterByXpath(driver, 10, "//div[@class='catalog-card-container']");
 
             var gridPriceElement = driver.FindElement(By.XPath(xpathGridPrice));
             var gridNameElement = driver.FindElement(By.XPath(xpathGridName));
             var gridPrice = gridPriceElement.Text;
             var gridName = gridNameElement.Text;
 
-            driver.FindElement(By.XPath(xpathOpenPDP)).Click();
+            //driver.FindElement(By.XPath("//div[@class='catalog-card-container']")).Click();
+            driver.FindElement(By.XPath("//div[@class='short-itm-desc']/a[@class='card-product-link']")).Click();
 
-            WaiterByXpath(driver, 10, xpathPDPprice);
+            WaiterByXpath(driver, 10, "//div[@class='description-cont']");
 
             var pdpPriceElement = driver.FindElement(By.XPath(xpathPDPprice));
             var pdpNameElement = driver.FindElement(By.XPath(xpathPDPname));
