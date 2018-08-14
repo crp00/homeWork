@@ -35,13 +35,16 @@ namespace homework13
         public void SomeTest()
         {
             var somePage = new BooksPage(driver);
-            var book = "Fire";
-
-            somePage.SearchForBook(book);
 
             var names = somePage.topAuthors.Select(x => x.Text).ToArray();
 
-            var empty = "";
+            var gridItem = new List<string>();
+
+            somePage.ReturnFirstBookAuthorAndTitle(gridItem);
+
+            somePage.firstBookTitleOnGrid.Click();
+
+            var shit = string.Empty;
         }
     }
 }

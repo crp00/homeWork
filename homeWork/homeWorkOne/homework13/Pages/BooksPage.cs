@@ -26,9 +26,29 @@ namespace homework13
         [FindsBy(How = How.XPath, Using = "//div[@class='viewbox']/ul/li")]
         public IList<IWebElement> topAuthors;
 
+        [FindsBy(How = How.XPath, Using = "//li[@class='product-item']/p/a")]
+        public IWebElement firstBookTitleOnGrid;
+
+        [FindsBy(How = How.XPath, Using = "//li[@class='product-item']/div[2]/a")]
+        public IWebElement firstBookAuthorOnGrid;
+
+        //[FindsBy(How = How.XPath, Using = "//a[contains(text(),'Домашние питомцы')]")]
+        //public IWebElement filterPets;
+
+        //[FindsBy(How = How.XPath, Using = "//span[contains(text(),'Быт. Дом. Красота и здоровье')]")]
+        //public IWebElement filterCategory;
+
+
         public BooksPage SearchForBook(string bookName)
         {
             categotySearch.SendKeys(bookName);
+            return this;
+        }
+
+        public BooksPage ReturnFirstBookAuthorAndTitle( List<string> someList)
+        {
+            someList.Add(firstBookTitleOnGrid.Text);
+            someList.Add(firstBookAuthorOnGrid.Text);
             return this;
         }
     }
