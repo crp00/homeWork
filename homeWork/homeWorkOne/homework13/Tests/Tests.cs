@@ -32,19 +32,36 @@ namespace homework13
         }
 
         [Test]
-        public void SomeTest()
+        public void ValidateBookAuthorAndTitle_PDPvsGRID()
         {
             var somePage = new BooksPage(driver);
 
             var names = somePage.topAuthors.Select(x => x.Text).ToArray();
 
             var gridItem = new List<string>();
+            var pdpItem = new List<string>();
 
             somePage.ReturnFirstBookAuthorAndTitle(gridItem);
+            somePage.firstBookTitleOnGrid.Click();
+            somePage.ReturnPDPBookAuthorAndTitle(pdpItem);
 
+            Assert.That(gridItem.Equals(pdpItem));
+        }
+
+        [Test]
+        public void ValidateBookPricesInMaxMinRange()
+        {
+            var somePage = new BooksPage(driver);
             somePage.firstBookTitleOnGrid.Click();
 
-            var shit = string.Empty;
+            int[] priceRange = { };
+            int[] suggestedPrices = { };
+
+            somePage.ReturnExpectedMinAndMaxPrice(priceRange);
+            somePage.PDPPriceTab.Click();
+            somePage.ReturnSuggestedPricesOnPDP(suggestedPrices);
+
+            Assert.IsTrue(suggestedPrices.All(x => x > priceRange.Min() && x < priceRange.Max()));
         }
     }
 }
