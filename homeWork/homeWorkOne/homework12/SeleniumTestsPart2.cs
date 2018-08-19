@@ -64,13 +64,13 @@ namespace homework12
         public void ValidateBrowserTitleAndFrameTitleAreCorrect()
         {
             var expectedTabTitle = "HTML Iframes";
-            var expectedFrameTitle = "Introduction";
+            var expectedFrameTitle = "HTML Introduction";
 
             driver.Navigate().GoToUrl("https://www.w3schools.com/hTml/html_iframe.asp");
             var tabTitle = driver.Title;
-            driver.SwitchTo().Frame(driver.FindElement(By.XPath("//iframe[@height='310px' and @width='99%']")));
-            driver.FindElement(By.XPath("//div[@id='main']/div[2]/a[2]")).Click();
-            var iframeTitle = driver.FindElement(By.XPath("//span[@class='color_h1' and contains(text(),'Introduction')]"));
+            driver.SwitchTo().Frame(driver.FindElement(By.XPath("//iframe[@src='default.asp']")));
+            driver.FindElement(By.XPath("//a[@class='w3-right w3-btn' and @href='html_intro.asp']")).Click();
+            var iframeTitle = driver.FindElement(By.XPath("//*[@id='main']/h1"));
             var frameTitle = iframeTitle.Text;
 
             Assert.That(tabTitle.Equals(expectedTabTitle) && frameTitle.Equals(expectedFrameTitle));
