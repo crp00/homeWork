@@ -8,7 +8,7 @@ using SeleniumExtras.PageObjects;
 
 namespace homework13
 {
-    public class BasePage
+    public class BasePage : Waiters
     {
         protected IWebDriver _driver;
 
