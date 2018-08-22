@@ -87,8 +87,8 @@ Calculate the value of method f4(1).
 */
 
 class A {
-	constructor(p) {
-		this.p1 = p;
+	constructor(p = 2) {
+		this.p1 = p
 	}
 	
 	f1() {
@@ -117,15 +117,15 @@ class C extends B {
 class D extends C {
 	constructor(p1,p2,p4) {
 		super(p1,p2)
-		this.p4 = 7 * p1
+		this.p4 = 7 * this.p1
 	}
 	
 	f2(x) {
-		return super.f2(x) * 5
+		return super.f2(x) * 5;
 	}
 	
 	f4(x) {
-		super.f1() + super.f2()
+		return this.f1() + this.f2(x);
 	}		
 };
 
@@ -135,4 +135,7 @@ let c = new C();
 let d = new D();
 
 console.log(a,b,c,d);
+
+var result = d.f4(3);
+console.log(result);
 
