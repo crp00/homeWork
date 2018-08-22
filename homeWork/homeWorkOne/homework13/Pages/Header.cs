@@ -18,7 +18,7 @@ namespace homework13
         private IList<IWebElement> HeaderNavOptions;
 
         [FindsBy(How = How.XPath, Using = "//span[@data-language='uk']")]
-        private IWebElement ukLocal;
+        private IWebElement UkLocal;
 
         public void ReturnHeaderNavOptions(List<string> someList) 
         {
@@ -27,7 +27,7 @@ namespace homework13
 
         public void EnableUALocalization()
         {
-            ukLocal.Click();
+            UkLocal.Click();
         }
     }
 }

@@ -15,22 +15,16 @@ namespace homework13
         { }
 
         [FindsBy(How = How.XPath, Using = "//div/input[@class='field']")]
-        private IWebElement categotySearch;
-
-        //[FindsBy(How = How.XPath, Using = "//form[@onsubmit='return false;']")]
-        //public IWebElement quickSearch;
-
-        //[FindsBy(How = How.ClassName, Using = "cell-navigation cell-navigation-tree")]
-        //public IWebElement facetMenu;
+        private IWebElement CategotySearch;
 
         [FindsBy(How = How.XPath, Using = "//div[@class='viewbox']/ul/li")]
-        private IList<IWebElement> topAuthors;
+        private IList<IWebElement> TopAuthors;
 
         [FindsBy(How = How.XPath, Using = "//li[@class='product-item']/p/a")]
-        private IWebElement firstBookTitleOnGrid;
+        private IWebElement FirstBookTitleOnGrid;
 
         [FindsBy(How = How.XPath, Using = "//li[@class='product-item']/div[2]/a")]
-        private IWebElement firstBookAuthorOnGrid;
+        private IWebElement FirstBookAuthorOnGrid;
 
         [FindsBy(How = How.XPath, Using = "//h1[@datatype='card-title']")]
         private IWebElement BookTitleOnPDP;
@@ -49,13 +43,13 @@ namespace homework13
 
         public void SearchForBook(string bookName)
         {
-            categotySearch.SendKeys(bookName);
+            CategotySearch.SendKeys(bookName);
         }
 
         public void ReturnFirstBookAuthorAndTitle( List<string> someList)
         {
-            someList.Add(firstBookTitleOnGrid.Text);
-            someList.Add(firstBookAuthorOnGrid.Text);
+            someList.Add(FirstBookTitleOnGrid.Text);
+            someList.Add(FirstBookAuthorOnGrid.Text);
         }
 
         public void ReturnPDPBookAuthorAndTitle(List<string> someList)
@@ -73,13 +67,13 @@ namespace homework13
 
         public void ReturnSuggestedPricesOnPDP(int[] someArray)
         {
-            WaiterXpath(this._driver, 5, "//a[@class='price-lg']//span[@class='value']");
+            WaitForXpath(this._driver, 5, "//a[@class='price-lg']//span[@class='value']");
             someArray = PDPSuggestedPrices.Select(x => int.Parse(x.Text)).ToArray();
         }
 
         public void GetTopAuthors(string[] someArray)
         {
-            someArray = topAuthors.Select(x => x.Text).ToArray();
+            someArray = TopAuthors.Select(x => x.Text).ToArray();
         }
 
         public void OpenPDPPrices()
@@ -89,7 +83,7 @@ namespace homework13
 
         public void OpenFirstItemPDP()
         {
-            firstBookTitleOnGrid.Click();
+            FirstBookTitleOnGrid.Click();
         }
     }
 }
