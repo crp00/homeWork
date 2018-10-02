@@ -14,12 +14,24 @@ namespace homework15
         public MainPage(IWebDriver driver) : base(driver)
         { }
 
-        [FindsBy(How = How.XPath, Using = "//div/input[@class='field']")]
-        private IWebElement CategotySearch;
+        [FindsBy(How = How.XPath, Using = "//input[@name='text']")]
+        private IWebElement SearchField;
 
-        public void SearchProduct()
+        [FindsBy(How = How.XPath, Using = "//button[@class='btn-link-i js-rz-search-button']")]
+        private IWebElement SearchButton;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='g-i-tile-i-title clearfix']")]
+        private IWebElement FirstProduct;
+
+        public void SearchProduct(string productName)
         {
-            //do stuff
+            SearchField.SendKeys(productName);
+            SearchButton.Click();
+        }
+
+        public void OpenFirstProduct()
+        {
+            FirstProduct.Click();
         }
     }
 }

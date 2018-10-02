@@ -14,6 +14,9 @@ namespace homework15
         public IWebDriver driver;
         private string mainUrl = "https://rozetka.com.ua/";
 
+        //public List<String> iPhone7Spec = new List<string>();
+        //public List<String> iPhone7PlusSpec = new List<string>();
+
         public string MainUrl { get => mainUrl; set => mainUrl = value; }
 
         [BeforeScenario]
@@ -21,7 +24,6 @@ namespace homework15
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(MainUrl);
         }
 
         [AfterScenario]

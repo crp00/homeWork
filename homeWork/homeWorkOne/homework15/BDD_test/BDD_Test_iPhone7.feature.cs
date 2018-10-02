@@ -71,23 +71,23 @@ namespace homework15.BDD_Test
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Check iPhone 7 specs")]
+        [NUnit.Framework.DescriptionAttribute("Output similar specs for iPhone 7 and iPhone 7 Plus into file/console")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void CheckIPhone7Specs()
+        public virtual void OutputSimilarSpecsForIPhone7AndIPhone7PlusIntoFileConsole()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check iPhone 7 specs", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Output similar specs for iPhone 7 and iPhone 7 Plus into file/console", null, new string[] {
                         "mytag"});
-#line 7
+#line 15
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 8
- testRunner.Given("I am on rozetka main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
- testRunner.When("I enter search value Apple iPhone 7 and open first details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
- testRunner.And("I open details tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
- testRunner.Then("the details are corresponding to Apple iPhone 7", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 16
+ testRunner.Given("I have specs for iPhone 7", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 17
+ testRunner.And("I have specs for iPhone 7 Plus", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
+ testRunner.When("I compare the specs of devices", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 19
+ testRunner.Then("I output similar specs into file/console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

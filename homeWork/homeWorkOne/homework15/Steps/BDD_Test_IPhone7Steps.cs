@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -12,26 +8,30 @@ namespace homework15
     [Binding]
     public class BDD_Test_IPhone7Steps : BaseSetup
     {
-        [Given(@"I am on rozetka main page")]
-        public void GivenIAmOnRozetkaMainPage()
+        [Given(@"I have specs for (.*)")]
+        public void GivenIHaveSpecsForIPhone(string device)
         {
+            driver.Navigate().GoToUrl(MainUrl);
+
             var mainpage = new MainPage(driver);
+            mainpage.SearchProduct(device);
+            mainpage.OpenFirstProduct();
+
+            var detailspage = new DetailsPage(driver);
+            detailspage.OpenSpecTab();
+            detailspage.SaveSpecs(device);
+
+            var x = "shit";
         }
         
-        [When(@"I enter search value (.*) and open first details page")]
-        public void WhenSearchThenOpenFirstPDP(string itemName)
+        [When(@"I compare the specs of devices")]
+        public void WhenICompareTheSpecsOfDevices()
         {
             //do stuff
         }
 
-        [When(@"I open details tab")]
-        public void WhenOpenDetailsTab()
-        {
-            //do stuff
-        }
-
-        [Then(@"the details are corresponding to (.*)")]
-        public void DetailsAreCorrespondingToProduct(string itemName)
+        [Then(@"I output similar specs into file/console")]
+        public void ThenIOutputSimilarSpecsIntoFileConsole()
         {
             //do stuff
         }
