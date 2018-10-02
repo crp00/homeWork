@@ -75,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDD_Test_iPhone7.feature</DependentUpon>
     </Compile>
+    <Compile Include="Waiter\Waiters.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

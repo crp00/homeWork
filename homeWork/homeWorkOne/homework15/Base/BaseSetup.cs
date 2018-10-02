@@ -9,7 +9,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace homework15
 {
-    public class BaseSetup
+    public class BaseSetup : Waiters
     {
         public IWebDriver driver;
         private string mainUrl = "https://rozetka.com.ua/";

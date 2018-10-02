@@ -7,7 +7,7 @@ using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace homework15.Steps
+namespace homework15
 {
     [Binding]
     public class BDD_Test_IPhone7Steps : BaseSetup
