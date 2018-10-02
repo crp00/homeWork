@@ -7,9 +7,9 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using homework13;
+using homework15;
 
-namespace homework13
+namespace homework15
 {
     [TestFixture]
     class TestsPageObject

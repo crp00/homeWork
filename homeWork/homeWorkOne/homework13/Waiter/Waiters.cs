@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace homework13
+namespace homework15
 {
     public class Waiters
     {

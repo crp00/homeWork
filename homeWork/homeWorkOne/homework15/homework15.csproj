@@ -39,6 +39,9 @@
     <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="SeleniumExtras.PageObjects, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.PageObjects.3.11.0\lib\net45\SeleniumExtras.PageObjects.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -62,8 +65,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actual_test\Tests.cs" />
     <Compile Include="Base\BaseSetup.cs" />
+    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\MainPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\BDD_Test_IPhone7Steps.cs" />
     <Compile Include="BDD_test\BDD_Test_iPhone7.feature.cs">
