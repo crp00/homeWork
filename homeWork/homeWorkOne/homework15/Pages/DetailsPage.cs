@@ -36,17 +36,17 @@ namespace homework15
             DeviceSpecsTab.Click();
         }
 
-        public void SaveSpecs(string deviceName)
-        {
-            switch (deviceName)
-            {
-                case "iPhone 7":
-                    SpecSaver(IPhone7Spec);
-                    break;
-                case "iPhone 7 Plus":
-                    SpecSaver(IPhone7PlusSpec);
-                    break;
-            }
-        }
+        //public void SaveSpecs(string deviceName)
+        //{
+        //    switch (deviceName)
+        //    {
+        //        case "iPhone 7":
+        //            SpecSaver(IPhone7Spec);
+        //            break;
+        //        case "iPhone 7 Plus":
+        //            SpecSaver(IPhone7PlusSpec);
+        //            break;
+        //    }
+        //}
     }
 }

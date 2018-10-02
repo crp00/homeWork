@@ -19,9 +19,7 @@ namespace homework15
 
             var detailspage = new DetailsPage(driver);
             detailspage.OpenSpecTab();
-            detailspage.SaveSpecs(device);
-
-            var x = "shit";
+            //detailspage.SaveSpecs(device);
         }
         
         [When(@"I compare the specs of devices")]
