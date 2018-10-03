@@ -24,13 +24,23 @@ namespace homework15
 
             WaitForXpath(driver,10, "//table[@class='chars-t']//a[@class='novisited']");
 
+            //switch (device)
+            //{
+            //    case "iPhone 7":
+            //        ScenarioContext.Current["iPhone7SpecObject"] = detailspage.ReturnDeviceSpecs();
+            //        break;
+            //    case "iPhone 7 Plus":
+            //        ScenarioContext.Current["iPhone7PlusSpecObject"] = detailspage.ReturnDeviceSpecs();
+            //        break;
+            //}
+
             switch (device)
             {
                 case "iPhone 7":
-                    ScenarioContext.Current["iPhone7SpecObject"] = detailspage.ReturnDeviceSpecs();
+                    ScenarioContext.Current.Add("iPhone7SpecObject", detailspage.ReturnDeviceSpecs());
                     break;
                 case "iPhone 7 Plus":
-                    ScenarioContext.Current["iPhone7PlusSpecObject"] = detailspage.ReturnDeviceSpecs();
+                    ScenarioContext.Current.Add("iPhone7PlusSpecObject", detailspage.ReturnDeviceSpecs());
                     break;
             }
         }
@@ -38,8 +48,13 @@ namespace homework15
         [When(@"I compare the specs of devices")]
         public void WhenICompareTheSpecsOfDevices()
         {
-            var iPhone7SDO = ScenarioContext.Current["iPhone7SpecObject"];
-            var iPhone7PSDO = ScenarioContext.Current["iPhone7PlusSpecObject"];
+            //var iPhone7SDO = ScenarioContext.Current["iPhone7SpecObject"];
+            //var iPhone7PSDO = ScenarioContext.Current["iPhone7PlusSpecObject"];
+
+            var iPhone7 = ScenarioContext.Current.Get<IWebElement>("iPhone7SpecObject");
+            var iPhone7Plus = ScenarioContext.Current.Get<IWebElement>("iPhone7PlusSpecObject");
+
+            var temp = "text"; //for debug break point
         }
 
         [Then(@"I output similar specs into file/console")]
