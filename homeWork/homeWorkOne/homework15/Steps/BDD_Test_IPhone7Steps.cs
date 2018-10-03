@@ -20,6 +20,10 @@ namespace homework15
             var detailspage = new DetailsPage(driver);
             detailspage.OpenSpecTab();
 
+            //System.Threading.Thread.Sleep(5000);
+
+            WaitForXpath(driver,10, "//table[@class='chars-t']//a[@class='novisited']");
+
             switch (device)
             {
                 case "iPhone 7":
@@ -34,8 +38,8 @@ namespace homework15
         [When(@"I compare the specs of devices")]
         public void WhenICompareTheSpecsOfDevices()
         {
-            var iPhone7SD = (IWebElement)ScenarioContext.Current["iPhone7SpecObject"];
-            var temp = "some";
+            var iPhone7SDO = ScenarioContext.Current["iPhone7SpecObject"];
+            var iPhone7PSDO = ScenarioContext.Current["iPhone7PlusSpecObject"];
         }
 
         [Then(@"I output similar specs into file/console")]
