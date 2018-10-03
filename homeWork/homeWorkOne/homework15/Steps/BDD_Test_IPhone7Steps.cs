@@ -19,13 +19,23 @@ namespace homework15
 
             var detailspage = new DetailsPage(driver);
             detailspage.OpenSpecTab();
-            //detailspage.SaveSpecs(device);
+
+            switch (device)
+            {
+                case "iPhone 7":
+                    ScenarioContext.Current["iPhone7SpecObject"] = detailspage.ReturnDeviceSpecs();
+                    break;
+                case "iPhone 7 Plus":
+                    ScenarioContext.Current["iPhone7PlusSpecObject"] = detailspage.ReturnDeviceSpecs();
+                    break;
+            }
         }
         
         [When(@"I compare the specs of devices")]
         public void WhenICompareTheSpecsOfDevices()
         {
-            //do stuff
+            var iPhone7SD = (IWebElement)ScenarioContext.Current["iPhone7SpecObject"];
+            var temp = "some";
         }
 
         [Then(@"I output similar specs into file/console")]
