@@ -51,8 +51,8 @@ namespace homework15
             //var iPhone7SDO = ScenarioContext.Current["iPhone7SpecObject"];
             //var iPhone7PSDO = ScenarioContext.Current["iPhone7PlusSpecObject"];
 
-            var iPhone7 = ScenarioContext.Current.Get<IWebElement>("iPhone7SpecObject");
-            var iPhone7Plus = ScenarioContext.Current.Get<IWebElement>("iPhone7PlusSpecObject");
+            var iPhone7 = ScenarioContext.Current.Get<IWebElement>("iPhone7SpecObject"); //fails to cast
+            var iPhone7Plus = ScenarioContext.Current.Get<IWebElement>("iPhone7PlusSpecObject"); //fails to cast
 
             var temp = "text"; //for debug break point
         }
