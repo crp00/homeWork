@@ -1,7 +1,7 @@
 ﻿using System;
 using TechTalk.SpecFlow;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace homework15
 {
@@ -13,6 +13,9 @@ namespace homework15
         {
             driver.Navigate().GoToUrl(MainUrl);
 
+            var test1 = new List<string>();
+            var test2 = new List<string>();
+
             var mainpage = new MainPage(driver);
             mainpage.SearchProduct(device);
             mainpage.OpenFirstProduct();
@@ -20,27 +23,17 @@ namespace homework15
             var detailspage = new DetailsPage(driver);
             detailspage.OpenSpecTab();
 
-            //System.Threading.Thread.Sleep(5000);
-
             WaitForXpath(driver,10, "//table[@class='chars-t']//a[@class='novisited']");
-
-            //switch (device)
-            //{
-            //    case "iPhone 7":
-            //        ScenarioContext.Current["iPhone7SpecObject"] = detailspage.ReturnDeviceSpecs();
-            //        break;
-            //    case "iPhone 7 Plus":
-            //        ScenarioContext.Current["iPhone7PlusSpecObject"] = detailspage.ReturnDeviceSpecs();
-            //        break;
-            //}
 
             switch (device)
             {
                 case "iPhone 7":
-                    ScenarioContext.Current.Add("iPhone7SpecObject", detailspage.ReturnDeviceSpecs());
+                    test1 = detailspage.ReturnDeviceSpecs();
+                    ScenarioContext.Current.Add("Iphone7", test1);
                     break;
                 case "iPhone 7 Plus":
-                    ScenarioContext.Current.Add("iPhone7PlusSpecObject", detailspage.ReturnDeviceSpecs());
+                    test2 = detailspage.ReturnDeviceSpecs();
+                    ScenarioContext.Current.Add("Ipone7Plus", test2);
                     break;
             }
         }
@@ -48,19 +41,23 @@ namespace homework15
         [When(@"I compare the specs of devices")]
         public void WhenICompareTheSpecsOfDevices()
         {
-            //var iPhone7SDO = ScenarioContext.Current["iPhone7SpecObject"];
-            //var iPhone7PSDO = ScenarioContext.Current["iPhone7PlusSpecObject"];
+            var iPhone7Props = ScenarioContext.Current.Get<List<string>>("Iphone7");
+            var iPhone7PlusProps = ScenarioContext.Current.Get<List<string>>("Ipone7Plus");
 
-            var iPhone7 = ScenarioContext.Current.Get<IWebElement>("iPhone7SpecObject"); //fails to cast
-            var iPhone7Plus = ScenarioContext.Current.Get<IWebElement>("iPhone7PlusSpecObject"); //fails to cast
+            var matches = iPhone7Props.Intersect(iPhone7PlusProps).ToList();
 
-            var temp = "text"; //for debug break point
+            ScenarioContext.Current.Add("Results", matches);
         }
 
         [Then(@"I output similar specs into file/console")]
         public void ThenIOutputSimilarSpecsIntoFileConsole()
         {
-            //do stuff
+            var output = ScenarioContext.Current.Get<List<string>>("Results");
+
+            foreach (var spec in output)
+            {
+                Console.WriteLine(spec);
+            }
         }
     }
 }
