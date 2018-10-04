@@ -23,7 +23,9 @@ namespace homework15
             var detailspage = new DetailsPage(driver);
             detailspage.OpenSpecTab();
 
-            WaitForXpath(driver,10, "//table[@class='chars-t']//a[@class='novisited']");
+            //System.Threading.Thread.Sleep(8000);
+
+            WaitForXpath(driver, 10, "//table[@class='chars-t']/tbody//div[@class='chars-value']");
 
             switch (device)
             {
