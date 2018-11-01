@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "46b3365c-9479-4d94-b3ad-6889065493fe",
+		"name": "Test_Col",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 All Items get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2 Item post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 352647323,\n\t\"name\": \"somename\",\n\t\"isComplete\": false,\n\t\"values\": [\n\t\t{\n\t\t\t\"id\": 1352627,\n\t\t\t\"value\": 444\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3 Item get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items/352647323",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items",
+						"352647323"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4 Item put",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 352647323,\n\t\"name\": \"somename\",\n\t\"isComplete\": false,\n\t\"values\": [\n\t\t{\n\t\t\t\"id\": 3,\n\t\t\t\"value\": 4445\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items/352647323",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items",
+						"352647323"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5 item delete All values",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items/352647323/values/1352627",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items",
+						"352647323",
+						"values",
+						"1352627"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6 item delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items/352647323/values",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items",
+						"352647323",
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7 item get values",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items/352647323/values",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items",
+						"352647323",
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8 item put value",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 4421,\r\n  \"value\": 462423\r\n}"
+				},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items/352647323/values",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items",
+						"352647323",
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9 item post value",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 66434,\r\n  \"value\": 346342\r\n}"
+				},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items/352647323/values",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items",
+						"352647323",
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11 item get value",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 66434,\r\n  \"value\": 346342\r\n}"
+				},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items/352647323/values/4421",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items",
+						"352647323",
+						"values",
+						"4421"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12 item delete value",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 66434,\r\n  \"value\": 346342\r\n}"
+				},
+				"url": {
+					"raw": "http://epuakyiw1888.kyiv.epam.com:8024/api/items/352647323/values/4421",
+					"protocol": "http",
+					"host": [
+						"epuakyiw1888",
+						"kyiv",
+						"epam",
+						"com"
+					],
+					"port": "8024",
+					"path": [
+						"api",
+						"items",
+						"352647323",
+						"values",
+						"4421"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
